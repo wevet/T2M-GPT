@@ -154,3 +154,9 @@ Visualize_temp.py
 new.sh
 T2M_render
 render_final_t2m.py
+
+# custom
+.idea
+*.pt
+motion_*.gif
+motion_*.npy

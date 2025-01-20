@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Generator</title>
+</head>
+<body>
+    <h1>Motion Generator</h1>
+    <form method="post">
+        <label for="clip_text">Enter motion description:</label>
+        <input type="text" id="clip_text" name="clip_text" required>
+        <button type="submit">Generate Motion</button>
+    </form>
+
+    {% if gif_filename %}
+        <h2>Generated Motion</h2>
+        <img src="{{ url_for('static', filename=gif_filename) }}" alt="Generated Motion GIF">
+
+        <!-- NPYファイルダウンロードボタン -->
+        <form action="{{ url_for('download', filename=npy_filename) }}" method="get">
+            <button type="submit">Download NPY File</button>
+        </form>
+    {% endif %}
+</body>
+</html>
+
